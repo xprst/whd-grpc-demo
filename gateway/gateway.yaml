@@ -32,7 +32,7 @@ static_resources:
                     config:
                       proto_descriptor: "/etc/gateway_proto.pb"
                       services:
-                        - "demo.Hello"
+                        - "mysoft.user.v1.UserService"
                       print_options:
                         add_whitespace: true
                         always_print_primitive_fields: true
@@ -50,5 +50,5 @@ static_resources:
       http2_protocol_options: {}
       hosts:
         - socket_address:
-            address: 192.168.52.1  # 换成你的grpc服务的地址和端口
+            address: 10.5.99.5  # 换成你的grpc服务的地址和端口
             port_value: 8888
