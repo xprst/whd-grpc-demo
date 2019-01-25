@@ -1,0 +1,23 @@
+version: '2'
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./gateway.yaml:/etc/gateway.yaml
+    networks:
+      - default
+    environment:
+      - PROXY_NAME=gateway
+    expose:
+      - "9901"
+      - "9902"
+    ports:
+      - 9901:9901
+      - 9902:9902
+
+networks:
+  default:
+    external:
+      name: service

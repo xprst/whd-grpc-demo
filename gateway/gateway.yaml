@@ -1,0 +1,54 @@
+admin:
+  access_log_path: "/var/log/envoy/admin_access.log"
+  address:
+    socket_address: { address: 0.0.0.0, port_value: 9901 }
+
+static_resources:
+  listeners:
+    - name: main-listener
+      address:
+        socket_address: { address: 0.0.0.0, port_value: 9902 }
+      filter_chains:
+        - filters:
+            - name: envoy.http_connection_manager
+              config:
+                stat_prefix: gateway
+                codec_type: AUTO
+                use_remote_address: true
+                access_log:
+                  - name: envoy.file_access_log
+                    config:
+                      path: "/var/log/envoy/gateway.log"
+                route_config:
+                  name: gateway_route
+                  virtual_hosts:
+                    - name: gateway_route
+                      domains: ["*"]
+                      routes:
+                        - match: { prefix: "/", grpc: {} }
+                          route: { cluster: demo-services, timeout: { seconds: 60 } }
+                http_filters:
+                  - name: envoy.grpc_json_transcoder
+                    config:
+                      proto_descriptor: "/etc/gateway_proto.pb"
+                      services:
+                        - "demo.Hello"
+                      print_options:
+                        add_whitespace: true
+                        always_print_primitive_fields: true
+                        always_print_enums_as_ints: false
+                        preserve_proto_field_names: false
+                  - name: envoy.router
+
+
+  clusters:
+    - name: demo-services
+      connect_timeout: 7s
+      type: logical_dns
+      lb_policy: round_robin
+      dns_lookup_family: V4_ONLY
+      http2_protocol_options: {}
+      hosts:
+        - socket_address:
+            address: 192.168.52.1  # 换成你的grpc服务的地址和端口
+            port_value: 8888

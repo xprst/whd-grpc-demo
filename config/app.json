@@ -1,0 +1,15 @@
+{
+  "server": {
+    "grpcPort": 8888
+  },
+  "datasource": {
+    "default": {
+      "drivername": "mysql",
+      "datasourcename": "root:123456@(10.5.11.18:3307)/grpc_demo?charset=utf8"
+    }
+  },
+  "userDefineConfig": " grpc demo"
+}
+
+
+

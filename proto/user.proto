@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package mysoft.user.v1;
+
+// golang 包名
+option go_package = "proto";
+// C# 命名空间名称
+option csharp_namespace = "Mysoft.User.V1";
+// 本选项让proto编译器在包名(参考下一选项)内部产生Java代码， 而不是在一个外部类以内。
+// 通过减少一层的命名嵌套， 提供了一种更简单的开发体验， 这与其他大多数不支持外部类的编程语言保持一致.
+option java_multiple_files = true;
+// Java外部类的名称应该符合驼峰命名法则. 该类只是用来持有proto的描述符， 所以开发者不需要直接与它打交道。
+option java_outer_classname = "UserProto";
+// Java 包名
+option java_package = "com.mysoft.user.v1";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+service UserService {
+    rpc ListUsers(ListUserRequest) returns (ListUserResponse) {
+        option (google.api.http) = {
+            get:"/v1/users"
+        };
+    };
+    rpc GetUser(GetUserRequest) returns (User) {
+        option (google.api.http) = {
+            get: "/v1/users/{id}"
+        };
+    };
+    rpc CreateUser(CreateUserRequest) returns (User) {
+        option (google.api.http) = {
+            post: "/v1/users"
+            body: "user"
+        };
+    };
+    rpc UpdateUser(UpdateUserRequest) returns (User) {
+        option (google.api.http) = {
+            patch: "/v1/users"
+            body: "user"
+        };
+    };
+    rpc DeleteUser(DeleteUserRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/users/{id}"
+        };
+    };
+}
+
+message User {
+    int32 id = 1;
+    string name = 2;
+    int32 age = 3;
+    bool sex = 4;
+}
+
+message ListUserRequest {
+    int32 page_size = 1;
+    int32 page_index = 2;
+}
+
+message ListUserResponse {
+    repeated User users = 1;
+}
+
+message GetUserRequest {
+    int32 id = 1;
+}
+
+message CreateUserRequest {
+    User user = 1;
+}
+
+message UpdateUserRequest {
+    User user = 1;
+}
+
+message DeleteUserRequest {
+    int32 id = 1;
+}
