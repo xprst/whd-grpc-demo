@@ -6,7 +6,6 @@ import (
 	"github.com/golang/protobuf/ptypes/empty"
 	"github.com/xprst/whd-grpc-base/app"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/grpclog"
 	"google.golang.org/grpc/status"
 	pb "whd-grpc-demo/proto"
 	"whd-grpc-demo/storge/entity"
@@ -31,8 +30,6 @@ func (t UserService) ListUsers(ctx context.Context, r *pb.ListUserRequest) (*pb.
 	err := t.orm.Find(&users)
 
 	if err != nil {
-		grpclog.Errorf("ListUsers orm find err:%v, ListUserRequest: %s", err, r.String())
-
 		return nil, err
 	}
 
@@ -58,8 +55,6 @@ func (t UserService) GetUser(ctx context.Context, r *pb.GetUserRequest) (*pb.Use
 	has, err := t.orm.Id(r.Id).Get(user)
 
 	if err != nil {
-		grpclog.Errorf("GetUser orm get err:%v, Id: %d", err, r.Id)
-
 		return nil, err
 	}
 
@@ -87,8 +82,6 @@ func (t UserService) CreateUser(ctx context.Context, r *pb.CreateUserRequest) (*
 	_, err := t.orm.Insert(user)
 
 	if err != nil {
-		grpclog.Errorf("CreateUser orm insert err:%v, CreateUserRequest: %s", err, r.String())
-
 		return nil, err
 	}
 
@@ -110,8 +103,6 @@ func (t UserService) UpdateUser(ctx context.Context, r *pb.UpdateUserRequest) (*
 	_, err := t.orm.Id(user.ID).Update(user)
 
 	if err != nil {
-		grpclog.Errorf("UpdateUser orm update err:%v, UpdateUserRequest: %s", err, r.String())
-
 		return nil, err
 	}
 
@@ -129,8 +120,6 @@ func (t UserService) DeleteUser(ctx context.Context, r *pb.DeleteUserRequest) (*
 	_, err := t.orm.Id(r.Id).Delete(&user)
 
 	if err != nil {
-		grpclog.Errorf("DeleteUser orm get err:%v, Id: %d", err, r.Id)
-
 		return nil, err
 	}
 

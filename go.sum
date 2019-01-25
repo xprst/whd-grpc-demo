@@ -6,8 +6,12 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/denisenkom/go-mssqldb v0.0.0-20181014144952-4e0d7dc8888f h1:WH0w/R4Yoey+04HhFxqZ6VX6I0d7RMyw5aXQ9UTvQPs=
 github.com/denisenkom/go-mssqldb v0.0.0-20181014144952-4e0d7dc8888f/go.mod h1:xN/JuLBIz4bjkxNmByTiV1IbhfnYb6oo99phBn4Eqhc=
+github.com/denisenkom/go-mssqldb v0.0.0-20190121005146-b04fd42d9952 h1:b5OnbZD49x9g+/FcYbs/vukEt8C/jUbGhCJ3uduQmu8=
+github.com/denisenkom/go-mssqldb v0.0.0-20190121005146-b04fd42d9952/go.mod h1:xN/JuLBIz4bjkxNmByTiV1IbhfnYb6oo99phBn4Eqhc=
 github.com/go-sql-driver/mysql v1.4.0 h1:7LxgVwFb2hIQtMm87NdgAVfXjnt4OePseqT1tKx+opk=
 github.com/go-sql-driver/mysql v1.4.0/go.mod h1:zAC/RDZ24gD3HViQzih4MyKcchzm+sOG5ZlKdlhCg5w=
+github.com/go-sql-driver/mysql v1.4.1 h1:g24URVg0OFbNUTx9qqY1IRZ9D9z3iPyi5zKhQZpNwpA=
+github.com/go-sql-driver/mysql v1.4.1/go.mod h1:zAC/RDZ24gD3HViQzih4MyKcchzm+sOG5ZlKdlhCg5w=
 github.com/go-xorm/builder v0.3.2 h1:pSsZQRRzJNapKEAEhigw3xLmiLPeAYv5GFlpYZ8+a5I=
 github.com/go-xorm/builder v0.3.2/go.mod h1:v8mE3MFBgtL+RGFNfUnAMUqqfk/Y4W5KuwCFQIEpQLk=
 github.com/go-xorm/core v0.6.0 h1:tp6hX+ku4OD9khFZS8VGBDRY3kfVCtelPfmkgCyHxL0=
@@ -39,6 +43,7 @@ github.com/google/go-genproto v0.0.0-20190111180523-db91494dd46c h1:9lZ92fIdMmuj
 github.com/google/go-genproto v0.0.0-20190111180523-db91494dd46c/go.mod h1:7Ep/1NZk928CDR8SjdVbjWNpdIf6nzjE3BTgJDr2Atg=
 github.com/google/uuid v1.1.0 h1:Jf4mxPC/ziBnoPIdpQdPJ9OeiomAUHLvxmPRSPH9m4s=
 github.com/google/uuid v1.1.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
+github.com/googleapis/google-cloud-go v0.34.0 h1:cRJNjTqTPBAlgo8+Q3lT6nuLgIX60pBDMfKwPs5qFDE=
 github.com/googleapis/google-cloud-go v0.34.0/go.mod h1:yJoOdPPE9UpqbamBhJvp7Ur6OUPPV4rUY3RnssPGNBA=
 github.com/grpc-ecosystem/go-grpc-middleware v1.0.0 h1:BWIsLfhgKhV5g/oF34aRjniBHLTZe5DNekSjbAjIS6c=
 github.com/grpc-ecosystem/go-grpc-middleware v1.0.0/go.mod h1:FiyG127CGDf3tlThmgyCl78X/SZQqEOJBCDaAfeWzPs=
@@ -79,6 +84,8 @@ github.com/xprst/whd-grpc-base v0.0.0-20190121080253-f9d4cfbf5d73 h1:duVRRoPFDDJ
 github.com/xprst/whd-grpc-base v0.0.0-20190121080253-f9d4cfbf5d73/go.mod h1:vO2mGSADdM8h4RQn0pa1tCOgEKcb8FWfzLJO1QxoOE8=
 github.com/xprst/whd-grpc-base v0.0.0-20190124061501-b827118b64d6 h1:X1VPKfY8QJPIXBObX1usrVDb6GWl7b8xxfxCnfVXVMI=
 github.com/xprst/whd-grpc-base v0.0.0-20190124061501-b827118b64d6/go.mod h1:fWiie5zahk2Q3XcNqn9/JsB7GqlB1LE1GD9fhwFAWiw=
+github.com/xprst/whd-grpc-base v0.0.0-20190125041315-9b6bf9d974f8 h1:IcPQmR6c/T8GycXiyfZyKCYZQP/iN0VJ+6YbfQ+gvSo=
+github.com/xprst/whd-grpc-base v0.0.0-20190125041315-9b6bf9d974f8/go.mod h1:w91hi8XM8eVorM0KTvn4c2DG1hx4nRdm0MrbNDsZ/1g=
 github.com/ziutek/mymysql v1.5.4 h1:GB0qdRGsTwQSBVYuVShFBKaXSnSnYYC2d9knnE1LHFs=
 github.com/ziutek/mymysql v1.5.4/go.mod h1:LMSpPZ6DbqWFxNCHW77HeMg9I646SAhApZ/wKdgO/C0=
 go.uber.org/atomic v1.3.2 h1:2Oa65PReHzfn29GpvgsYwloV9AVFHPDk8tYxt2c2tr4=

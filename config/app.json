@@ -2,14 +2,19 @@
   "server": {
     "grpcPort": 8888
   },
-  "datasource": {
+  "dataSource": {
     "default": {
-      "drivername": "mysql",
-      "datasourcename": "root:123456@(10.5.11.18:3307)/grpc_demo?charset=utf8"
+      "driverName": "mysql",
+      "dataSourceName": "root:123456@(10.5.11.18:3307)/grpc_demo?charset=utf8",
+      "logLevel": "debug"
+    },
+    "pd_dev": {
+      "driverName": "mssql",
+      "dataSourceName": "server=10.5.11.34;user id=dbmanager;password=MysoftTest2014;database=ERP_PD",
+      "logLevel": "debug"
     }
   },
   "userDefineConfig": " grpc demo"
 }
-
 
 

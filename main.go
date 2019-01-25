@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"github.com/xprst/whd-grpc-base/app"
 	"github.com/xprst/whd-grpc-base/server"
@@ -9,8 +10,15 @@ import (
 )
 
 func main() {
+	// 从参数中读取配置文件
+	configPath := flag.String("conf","./config/app.json", "config file path")
+	flag.Parse()
+
 	// 使用配置文件初始化app
-	app.InitWithConfig("./config/app.json")
+	err := app.InitWithConfig(*configPath)
+	if err != nil {
+		panic(fmt.Sprintf("InitWithConfig failed ： %v",err))
+	}
 
 	// 从配置文件获取配置
 	hello := app.Config.GetString("userDefineConfig")
