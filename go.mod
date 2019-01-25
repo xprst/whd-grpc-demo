@@ -4,7 +4,7 @@ require (
 	github.com/go-xorm/xorm v0.7.1
 	github.com/golang/protobuf v1.2.0
 	github.com/google/go-cmp v0.2.0 // indirect
-	github.com/xprst/whd-grpc-base v0.0.0-20190125041315-9b6bf9d974f8
+	github.com/xprst/whd-grpc-base v0.0.0-20190125091732-d5c7eeb2f55d
 	golang.org/x/crypto v0.0.0-20181203042331-505ab145d0a9 // indirect
 	golang.org/x/net v0.0.0-20190110200230-915654e7eabc
 	golang.org/x/sys v0.0.0-20181205085412-a5c9d58dba9a // indirect

@@ -19,7 +19,7 @@ type UserService struct {
 // NewUserService 创建一个用户服务的实例
 func NewUserService() *UserService {
 	return &UserService{
-		// 从app.MyBean中获取数据库对应的xorm引擎
+		// 从app的全局对象MyBean中获取数据库对应的xorm引擎
 		orm: app.MyBean.GetEngine("default"),
 	}
 }

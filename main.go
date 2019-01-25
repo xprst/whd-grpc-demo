@@ -10,21 +10,22 @@ import (
 )
 
 func main() {
-	// 从参数中读取配置文件
+	// 从参数中读取配置文件地址
 	configPath := flag.String("conf","./config/app.json", "config file path")
 	flag.Parse()
 
-	// 使用配置文件初始化app
-	err := app.InitWithConfig(*configPath)
-	if err != nil {
-		panic(fmt.Sprintf("InitWithConfig failed ： %v",err))
-	}
+	// 使用配置文件初始化a程序
+	s := server.NewServer(server.WithConfig(*configPath))
 
-	// 从配置文件获取配置
+	// 从配置文件获取配置，使用app提供的全局对象
 	hello := app.Config.GetString("userDefineConfig")
 	fmt.Println("hello " + hello )
-	// 启动grpc服务
-	s := server.NewServer(server.WithPort(app.GrpcPort))
+
+	// 注册自己实现的grpc服务
 	pb.RegisterUserServiceServer(s.GrpcServer(), service.NewUserService())
-	_ = s.StartServer()
+	// 启动grpc服务
+	err := s.StartServer()
+	if err != nil {
+		panic(err)
+	}
 }

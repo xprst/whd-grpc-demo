@@ -86,6 +86,8 @@ github.com/xprst/whd-grpc-base v0.0.0-20190124061501-b827118b64d6 h1:X1VPKfY8QJP
 github.com/xprst/whd-grpc-base v0.0.0-20190124061501-b827118b64d6/go.mod h1:fWiie5zahk2Q3XcNqn9/JsB7GqlB1LE1GD9fhwFAWiw=
 github.com/xprst/whd-grpc-base v0.0.0-20190125041315-9b6bf9d974f8 h1:IcPQmR6c/T8GycXiyfZyKCYZQP/iN0VJ+6YbfQ+gvSo=
 github.com/xprst/whd-grpc-base v0.0.0-20190125041315-9b6bf9d974f8/go.mod h1:w91hi8XM8eVorM0KTvn4c2DG1hx4nRdm0MrbNDsZ/1g=
+github.com/xprst/whd-grpc-base v0.0.0-20190125091732-d5c7eeb2f55d h1:IUwj9EPbOQlm+HrdKxQGB8NncCNhgG++CHAnM+B2jS8=
+github.com/xprst/whd-grpc-base v0.0.0-20190125091732-d5c7eeb2f55d/go.mod h1:w91hi8XM8eVorM0KTvn4c2DG1hx4nRdm0MrbNDsZ/1g=
 github.com/ziutek/mymysql v1.5.4 h1:GB0qdRGsTwQSBVYuVShFBKaXSnSnYYC2d9knnE1LHFs=
 github.com/ziutek/mymysql v1.5.4/go.mod h1:LMSpPZ6DbqWFxNCHW77HeMg9I646SAhApZ/wKdgO/C0=
 go.uber.org/atomic v1.3.2 h1:2Oa65PReHzfn29GpvgsYwloV9AVFHPDk8tYxt2c2tr4=
